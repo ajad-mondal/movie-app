@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    padding: 5px 4rem;
+    box-shadow: 0px 2px 13px 2px rgb(87, 86, 86);
+    box-sizing: border-box;
+
+    ul {
+        display: flex;
+        align-items: center;
+        li {
+            list-style: none;
+            margin-left: 2rem;
+            button, input {
+                background-color: white;
+                font-size: 20px;
+                border: 1px solid gray;
+                padding: 6px;
+                border-radius: 2px;
+            }
+            
+        }
+    }
+}

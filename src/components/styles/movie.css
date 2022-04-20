@@ -1,0 +1,31 @@
+.movie-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 300px;
+  margin: 2rem;
+  border-radius: 8px;
+  -webkit-box-shadow: 1px 1px 12px 1px gray;
+          box-shadow: 1px 1px 12px 1px gray;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.movie-card figure {
+  margin: 8px;
+}
+
+.movie-card figure img {
+  width: 100%;
+}
+
+.movie-card:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 1px 1px 17px 1px #4b4a4a;
+          box-shadow: 1px 1px 17px 1px #4b4a4a;
+}
+/*# sourceMappingURL=movie.css.map */
