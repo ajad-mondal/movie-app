@@ -12,6 +12,7 @@ export default function MovieList({ movies, setBanner }) {
           overview={movie.overview}
           poster_path={movie.poster_path}
           vote_average={movie.vote_average}
+          vote_count={movie.vote_count}
           setBanner = {setBanner}
         />
       ))}

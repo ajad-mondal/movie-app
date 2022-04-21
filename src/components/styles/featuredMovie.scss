@@ -40,6 +40,26 @@ section {
                 background: linear-gradient(rgba(0,0,0,0) 20%, rgba(0,0,0,0.92) 90%);
                 p {
                     font-size: 20px;
+                    margin-right: 10px;
+                    i {
+                        margin-right: 4px;
+                    }
+                }
+                .rating {
+                    border-radius: 30px;
+                    background-color: gold;
+                    color: black;
+                    padding: 5px 13px;
+                    display: inline-block;
+                    font-size: 23px;
+                }
+                .type {
+                    border-radius: 30px;
+                    background-color: rgb(60, 144, 253);
+                    color: black;
+                    padding: 5px 13px;
+                    display: inline-block;
+                    font-size: 23px;
                 }
                 h2{
                     margin-bottom: 4px;

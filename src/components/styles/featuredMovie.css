@@ -57,6 +57,29 @@ section figure figcaption div {
 
 section figure figcaption div p {
   font-size: 20px;
+  margin-right: 10px;
+}
+
+section figure figcaption div p i {
+  margin-right: 4px;
+}
+
+section figure figcaption div .rating {
+  border-radius: 30px;
+  background-color: gold;
+  color: black;
+  padding: 5px 13px;
+  display: inline-block;
+  font-size: 23px;
+}
+
+section figure figcaption div .type {
+  border-radius: 30px;
+  background-color: #3c90fd;
+  color: black;
+  padding: 5px 13px;
+  display: inline-block;
+  font-size: 23px;
 }
 
 section figure figcaption div h2 {

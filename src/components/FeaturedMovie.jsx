@@ -9,6 +9,8 @@ export default function FeaturedMovie({featuredMovie}) {
         <figcaption>
             <div>
             <h2>{featuredMovie.title}</h2>
+            <p className='rating'><i class="fa-solid fa-star"></i> {featuredMovie.vote_average}</p>
+            <p className='type'>{featuredMovie.vote_count}+ votes</p>
             <p>{featuredMovie.overview}</p>
             </div>
 

@@ -1,11 +1,11 @@
 import React from 'react'
 import "./styles/movie.css";
 
-export default function Movie({title, overview, poster_path, vote_average, setBanner}) {
+export default function Movie({title, overview, poster_path, vote_average, vote_count, setBanner}) {
 
 
   return (
-    <div onClick={()=>setBanner(title, overview, poster_path, vote_average)} className="movie-card">
+    <div onClick={()=>setBanner(title, overview, poster_path, vote_average, vote_count)} className="movie-card">
         <figure>
             <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="" />
             <figcaption>

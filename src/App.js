@@ -19,7 +19,7 @@ function App() {
     setfilteredmovieList(filteredmovieList);
 
     const currentMovie = filteredmovieList[parseInt(Math.random()*filteredmovieList.length)]
-    setBanner(currentMovie.title, currentMovie.overview, currentMovie.poster_path, currentMovie.vote_average);
+    setBanner(currentMovie.title, currentMovie.overview, currentMovie.poster_path, currentMovie.vote_average, currentMovie.vote_count);
 
   }
   const sortMovies = (ascending = true, tobeFiltered = [...filteredmovieList])=> {
@@ -32,15 +32,16 @@ function App() {
     setfilteredmovieList([...tobeFiltered]);
     
     const currentMovie = tobeFiltered[parseInt(Math.random()*tobeFiltered.length)]
-    setBanner(currentMovie.title, currentMovie.overview, currentMovie.poster_path, currentMovie.vote_average);
+    setBanner(currentMovie.title, currentMovie.overview, currentMovie.poster_path, currentMovie.vote_average, currentMovie.vote_count);
   }
 
-  const setBanner= (title, overview, poster_path, vote_average)=> {
+  const setBanner= (title, overview, poster_path, vote_average, vote_count=0)=> {
     setFeaturedMovie({
       title,
       overview,
       poster_path,
-      vote_average
+      vote_average,
+      vote_count
     });
   }
 
@@ -48,11 +49,13 @@ function App() {
       fetch(URL).then((response)=> response.json())
       .then((data)=>data.results)
       .then((results)=> {
+        console.log(results);
         const moviesList = results.map((movie)=> Object({
           title  : movie.title,
           overview : movie.overview,
           poster_path : movie.poster_path,
-          vote_average : movie.vote_average
+          vote_average : movie.vote_average,
+          vote_count: movie.vote_count
         }))
 
         sortMovies(true, moviesList);
