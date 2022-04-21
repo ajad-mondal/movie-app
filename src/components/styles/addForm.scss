@@ -1,0 +1,39 @@
+#modal-bg {
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#form-modal{
+    padding: 10px;
+    z-index: 10;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+
+    form {
+        margin: 15px;
+
+        input , textarea, button {
+            display: block;
+            font-size: 20px;
+            margin: 8px 0px;
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+}
+
+// #portal {
+//     width: 100%;
+//     position: absolute;
+//     z-index: 6;
+//     border: 2px solid red;
+// }

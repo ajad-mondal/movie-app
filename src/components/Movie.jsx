@@ -10,7 +10,7 @@ export default function Movie({title, overview, poster_path, vote_average, vote_
   return (
     <div onClick={()=>setBanner(title, overview, poster_path, vote_average, vote_count)} className="movie-card">
         <figure>
-            <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="" />
+            <img src={`${poster_path}`} alt="" />
             <figcaption>
                 <h2>{title}</h2>
                 

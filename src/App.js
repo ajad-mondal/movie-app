@@ -3,9 +3,10 @@ import Header from './components/Header';
 import FeaturedMovie from './components/FeaturedMovie';
 import MovieList from './components/MovieList';
 
-import {useEffect, useReducer} from "react";
+import {useEffect, useReducer, useState} from "react";
 import MovieContext from './contexts/MovieContext';
 import AddMovieForm from './components/AddMovieForm';
+import Pagination from './components/Pagination';
 
 
 
@@ -51,7 +52,8 @@ const reducerFunc = (state ,  action) => {
 function App() {
   
   const URL = "https://api.themoviedb.org/3/movie/popular?api_key=5737b7855c47021346977222e0f67768&language=en-US";
-  
+  const [pageNo, setPageNo] = useState(1);
+  const [moviesPerPage, setMoviesPerPage] = useState(5);
   
   const [state, dispatch] = useReducer(reducerFunc, {
     movies : [],
@@ -75,6 +77,8 @@ function App() {
     
   }
 
+  
+
 
   const sortMovies = (ascending = true, tobeFiltered = [...state.filterMovieList])=> {
     // const tobeFiltered = [...filteredmovieList];
@@ -87,7 +91,7 @@ function App() {
       type : "SET_FILTERED_MOVIE_LIST",
       body : [...tobeFiltered],
     })
-    console.log(tobeFiltered);
+  
     
     const currentMovie = tobeFiltered[parseInt(Math.random()*tobeFiltered.length)]
     setBanner(currentMovie.title, currentMovie.overview, currentMovie.poster_path, currentMovie.vote_average, currentMovie.vote_count);
@@ -111,17 +115,17 @@ function App() {
       fetch(URL).then((response)=> response.json())
       .then((data)=>data.results)
       .then((results)=> {
-        console.log(results);
+    
         const moviesList = results.map((movie)=> Object({
           title  : movie.title,
           overview : movie.overview,
-          poster_path : movie.poster_path,
+          poster_path : `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
           vote_average : movie.vote_average,
           vote_count: movie.vote_count
         }))
 
         sortMovies(true, moviesList);
-        console.log(moviesList);
+  
         dispatch({
           type : "SET_MOVIES",
           body : [...moviesList],
@@ -141,13 +145,12 @@ function App() {
 
 
   return (
-  <MovieContext.Provider value={{state, setBanner, dispatch}}>
-    {state.addMovie ? <AddMovieForm/> : <>
-      <Header filterMovies = {filterMovies} sortMovies={sortMovies}/>
+  <MovieContext.Provider value={{state, setBanner, dispatch, sortMovies}}>
+    {state.addMovie ? <AddMovieForm/> : <> </>}
+      <Header filterMovies = {filterMovies} sortMovies={sortMovies} setMoviesPerPage={setMoviesPerPage}/>
        <FeaturedMovie />
-      <MovieList />
-    
-    </>}
+       <Pagination moviesPerPage={moviesPerPage} setPageNo={setPageNo}/>
+      <MovieList pageNo={pageNo} moviesPerPage={moviesPerPage}/>
     
   </MovieContext.Provider>
   );

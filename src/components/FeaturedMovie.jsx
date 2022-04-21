@@ -6,9 +6,9 @@ export default function FeaturedMovie() {
   const {state} = useContext(MovieContext);
   const featuredMovie = state.featuredMovie;
   return (
-    <section style={{background : "url(`https://image.tmdb.org/t/p/w500${featuredMovie.poster_path}`)"}}>
+    <section style={{background : "url({featuredMovie.poster_path})"}}>
       <figure>
-        <img src={`https://image.tmdb.org/t/p/w500${featuredMovie.poster_path}`} alt="Movie banner" />
+        <img src={`${featuredMovie.poster_path}`} alt="Movie banner" />
         <figcaption>
             <div>
             <h2>{featuredMovie.title}</h2>

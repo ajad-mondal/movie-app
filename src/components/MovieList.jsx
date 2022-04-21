@@ -2,16 +2,22 @@ import React, {useContext} from "react";
 import MovieContext from "../contexts/MovieContext";
 import Movie from "./Movie";
 
-export default function MovieList() {
+export default function MovieList({pageNo, moviesPerPage}) {
 
   const {state} = useContext(MovieContext);
-  console.log(state);
+
+  
+  const movies = state.filterMovieList;
+
+  const startingIndex = (pageNo-1)*moviesPerPage;
+  const thisPageMovies = movies.slice(startingIndex, startingIndex + parseFloat(moviesPerPage));
+  console.log(thisPageMovies, moviesPerPage, pageNo, startingIndex);
 
   return (
     <div
       style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
     >
-      {state.filterMovieList.map((movie) => (
+      {thisPageMovies.map((movie) => (
         <Movie
           title={movie.title}
           overview={movie.overview}
