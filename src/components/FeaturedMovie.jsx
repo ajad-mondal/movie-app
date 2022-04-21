@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import MovieContext from '../contexts/MovieContext';
 import "./styles/featuredMovie.css";
 
-export default function FeaturedMovie({featuredMovie}) {
+export default function FeaturedMovie() {
+  const {state} = useContext(MovieContext);
+  const featuredMovie = state.featuredMovie;
   return (
     <section style={{background : "url(`https://image.tmdb.org/t/p/w500${featuredMovie.poster_path}`)"}}>
       <figure>

@@ -5,5 +5,10 @@ fileignoreconfig:
 - filename: package-lock.json
   checksum: b3aa3470a8e373e8baae732c9669f6783bcc4b35e6c5c4bf7b2e65a929f85492
 - filename: public/index.html
-  checksum: e239b87dd4cb89cea53b9ddde12730356f955a7fead6b503fbfda30e5351eb07  
+  checksum: e239b87dd4cb89cea53b9ddde12730356f955a7fead6b503fbfda30e5351eb07
+version: ""
+
+fileignoreconfig:
+- filename: src/App.js
+  checksum: f83c4cc34156f0b63ce7770d5d7a4c89923d4babd005cc62df1dd7fb700ee606
 version: ""

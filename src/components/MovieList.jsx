@@ -1,12 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
+import MovieContext from "../contexts/MovieContext";
 import Movie from "./Movie";
 
-export default function MovieList({ movies }) {
+export default function MovieList() {
+
+  const {state} = useContext(MovieContext);
+  console.log(state);
+
   return (
     <div
       style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
     >
-      {movies.map((movie) => (
+      {state.filterMovieList.map((movie) => (
         <Movie
           title={movie.title}
           overview={movie.overview}
