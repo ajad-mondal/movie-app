@@ -26,8 +26,9 @@ section figure img {
      object-fit: cover;
   position: absolute;
   width: 100%;
-  -webkit-transform: translateY(-96vh);
-          transform: translateY(-96vh);
+  height: 150%;
+  -webkit-transform: translateY(-96px);
+          transform: translateY(-96px);
 }
 
 section figure figcaption {
@@ -44,15 +45,14 @@ section figure figcaption {
       -ms-flex-align: center;
           align-items: center;
   font-size: 35px;
-  padding: 18rem 3rem 1.5rem 3rem;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.92)));
-  background: linear-gradient(rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.92) 90%);
 }
 
 section figure figcaption div {
-  width: 80%;
+  padding: 7rem 3rem 1.5rem 3rem;
   position: absolute;
   bottom: 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.92)));
+  background: linear-gradient(rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.92) 90%);
 }
 
 section figure figcaption div p {

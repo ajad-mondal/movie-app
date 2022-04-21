@@ -17,12 +17,12 @@ section {
             object-fit: cover;
             position: absolute;
             width: 100%;
-            transform: translateY(-96vh);
+            height: 150%;
+            transform: translateY(-96px);
     
         }
 
         figcaption {
-            
             position: absolute;
             bottom: 0;
             left: 0;
@@ -32,13 +32,12 @@ section {
             display: flex;
             align-items: center;
             font-size: 35px;
-            padding: 18rem 3rem 1.5rem 3rem;
-            background: linear-gradient(rgba(0,0,0,0) 20%, rgba(0,0,0,0.92) 90%);
-
+            
             div {
-                width: 80%;
+                padding: 7rem 3rem 1.5rem 3rem;
                 position: absolute;
                 bottom: 0;
+                background: linear-gradient(rgba(0,0,0,0) 20%, rgba(0,0,0,0.92) 90%);
                 p {
                     font-size: 20px;
                 }

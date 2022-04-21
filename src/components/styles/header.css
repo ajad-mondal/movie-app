@@ -2,6 +2,8 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -17,7 +19,7 @@ header {
           box-sizing: border-box;
 }
 
-header ul {
+header h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,9 +28,24 @@ header ul {
           align-items: center;
 }
 
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0px;
+}
+
 header ul li {
   list-style: none;
-  margin-left: 2rem;
+  margin: 1rem;
 }
 
 header ul li button, header ul li input {
