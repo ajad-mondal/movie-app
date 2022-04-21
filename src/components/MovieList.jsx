@@ -1,7 +1,7 @@
 import React from "react";
 import Movie from "./Movie";
 
-export default function MovieList({ movies, setBanner }) {
+export default function MovieList({ movies }) {
   return (
     <div
       style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
@@ -13,7 +13,6 @@ export default function MovieList({ movies, setBanner }) {
           poster_path={movie.poster_path}
           vote_average={movie.vote_average}
           vote_count={movie.vote_count}
-          setBanner = {setBanner}
         />
       ))}
     </div>

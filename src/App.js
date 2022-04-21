@@ -4,6 +4,7 @@ import FeaturedMovie from './components/FeaturedMovie';
 import MovieList from './components/MovieList';
 
 import {useEffect, useState} from "react";
+import BannerContext from './contexts/BannerContext';
 
 function App() {
 
@@ -77,7 +78,9 @@ function App() {
   <>
     <Header filterMovies = {filterMovies} sortMovies={sortMovies}/>
     <FeaturedMovie featuredMovie = {featuredMovie}/>
-    <MovieList movies = {filteredmovieList} style={{display : "flex"}} setBanner={setBanner}/>
+    <BannerContext.Provider value={{setBanner}}>
+      <MovieList movies = {filteredmovieList} style={{display : "flex"}}/>
+    </BannerContext.Provider>
   </>
   );
 }
