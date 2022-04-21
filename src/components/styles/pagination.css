@@ -31,4 +31,8 @@
   margin: 1rem;
   cursor: pointer;
 }
+
+.selected-page {
+  border: 1px solid black;
+}
 /*# sourceMappingURL=pagination.css.map */

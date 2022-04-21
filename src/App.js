@@ -44,6 +44,8 @@ const reducerFunc = (state ,  action) => {
         featuredMovie : state.featuredMovie,
         addMovie : !state.addMovie,
       }
+    default :
+      return state;  
   }
 }
 
@@ -74,7 +76,7 @@ function App() {
 
     const currentMovie = filteredmovieList[parseInt(Math.random()*filteredmovieList.length)]
     setBanner(currentMovie.title, currentMovie.overview, currentMovie.poster_path, currentMovie.vote_average, currentMovie.vote_count);
-    
+    setPageNo(1);
   }
 
   
@@ -130,13 +132,7 @@ function App() {
           type : "SET_MOVIES",
           body : [...moviesList],
         })
-        // setMovies( 
-        //     moviesList
-        //     );
-      
-        // setfilteredmovieList(
-        //   moviesList
-        // );
+
         
       })
       
@@ -149,7 +145,7 @@ function App() {
     {state.addMovie ? <AddMovieForm/> : <> </>}
       <Header filterMovies = {filterMovies} sortMovies={sortMovies} setMoviesPerPage={setMoviesPerPage}/>
        <FeaturedMovie />
-       <Pagination moviesPerPage={moviesPerPage} setPageNo={setPageNo}/>
+       <Pagination moviesPerPage={moviesPerPage} setPageNo={setPageNo} pageNo={pageNo}/>
       <MovieList pageNo={pageNo} moviesPerPage={moviesPerPage}/>
     
   </MovieContext.Provider>

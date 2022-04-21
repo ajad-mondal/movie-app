@@ -11,7 +11,7 @@ export default function MovieList({pageNo, moviesPerPage}) {
 
   const startingIndex = (pageNo-1)*moviesPerPage;
   const thisPageMovies = movies.slice(startingIndex, startingIndex + parseFloat(moviesPerPage));
-  console.log(thisPageMovies, moviesPerPage, pageNo, startingIndex);
+
 
   return (
     <div
