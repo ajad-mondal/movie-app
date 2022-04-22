@@ -16,10 +16,15 @@
     background-color: white;
     transform: translate(-50%, -50%);
     border-radius: 15px;
-
+    
+    .form-header {
+        font-size: 2rem;
+        b {
+            cursor: pointer;
+        }
+    }
     form {
         margin: 15px;
-
         input , textarea, button {
             display: block;
             font-size: 20px;

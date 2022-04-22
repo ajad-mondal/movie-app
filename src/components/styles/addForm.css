@@ -19,6 +19,14 @@
   border-radius: 15px;
 }
 
+#form-modal .form-header {
+  font-size: 2rem;
+}
+
+#form-modal .form-header b {
+  cursor: pointer;
+}
+
 #form-modal form {
   margin: 15px;
 }

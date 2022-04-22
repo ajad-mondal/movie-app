@@ -38,7 +38,7 @@ export default function AddMovieForm() {
     ReactDOM.createPortal(
         <div id='modal-bg'>
             <div id="form-modal">
-                <i onClick={()=>{dispatch({type:"SET_ADD_MOVIE"})}}>&#10060;</i>
+                <div className='form-header'><b onClick={()=>{dispatch({type:"SET_ADD_MOVIE"})}}>&#10060;</b> <strong>Add Movie</strong> </div> 
                 <form onSubmit={handleSubmit}>
                     <input required type="text" placeholder='Movie Title' onChange={(event)=>setFields({...fields, title: event.target.value })}/>
                     <textarea required placeholder='Description' onChange={(event)=>setFields({...fields, overview: event.target.value })}></textarea>
