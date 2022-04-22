@@ -2,11 +2,16 @@ import React,{useContext} from 'react'
 import MovieContext from '../contexts/MovieContext';
 import './styles/header.css';
 
-export default function Header({filterMovies, sortMovies, setMoviesPerPage}) {
+export default function Header({filterMovies, sortMovies, setMoviesPerPage, setPageNo}) {
     const {dispatch} = useContext(MovieContext)
     const handleChange = (event)=> {
         console.log(event.target.value);
         filterMovies(event.target.value);
+    }
+
+    const handleMppChange = (event)=> {
+        setMoviesPerPage(event.target.value);
+        setPageNo(1);
     }
   return (
 
@@ -15,7 +20,7 @@ export default function Header({filterMovies, sortMovies, setMoviesPerPage}) {
         <ul>
             <li>
                 <label htmlFor="">Movies Per Page: </label>
-                <input min={1} max={10} defaultValue={5} type="number" onChange={(event)=>setMoviesPerPage(event.target.value)}/>
+                <input min={1} max={10} defaultValue={5} type="number" onChange={handleMppChange}/>
             </li>
             <li>
                 <button onClick={()=>dispatch({type: "SET_ADD_MOVIE"})}>Add Movie</button>

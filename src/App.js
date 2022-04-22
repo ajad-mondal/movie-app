@@ -143,7 +143,7 @@ function App() {
   return (
   <MovieContext.Provider value={{state, setBanner, dispatch, sortMovies}}>
     {state.addMovie ? <AddMovieForm/> : <> </>}
-      <Header filterMovies = {filterMovies} sortMovies={sortMovies} setMoviesPerPage={setMoviesPerPage}/>
+      <Header filterMovies = {filterMovies} sortMovies={sortMovies} setMoviesPerPage={setMoviesPerPage} setPageNo={setPageNo}/>
        <FeaturedMovie />
        <Pagination moviesPerPage={moviesPerPage} setPageNo={setPageNo} pageNo={pageNo}/>
       <MovieList pageNo={pageNo} moviesPerPage={moviesPerPage}/>
